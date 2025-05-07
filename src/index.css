@@ -1,0 +1,384 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px; */
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+nav {
+  position: relative;
+  top: 0;
+  width: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* translucent dark background */
+  backdrop-filter: blur(10px); /* optional glassmorphism effect */
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #aaccff;
+}
+
+
+.home-section {
+  position: relative;
+  padding: 10rem 17px;
+  color: white; /* Use white so text is visible over dark overlay */
+  min-height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #1a1a1a;
+
+}
+
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent black overlay */
+  z-index: 1;
+}
+
+.home-section-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.home-section h1, .home-section p {
+  z-index: 2; /* Ensure text is on top of the overlay */
+  position: relative;
+}
+
+.home-div {
+  position: relative;
+  top: -909px;
+  left: 1023px;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.home-background img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomIn 20s ease-in-out infinite alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  image-rendering: auto; /* try 'crisp-edges' if pixelated images */
+}
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-section-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 2s ease-out forwards;
+}
+.site-footer {
+  padding: 2rem;
+  background-color: #111;
+  color: #aaa;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.about-left {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.about-profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #646cff;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.4);
+}
+
+.about-right {
+  flex: 2;
+  min-width: 300px;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-details h2,
+.about-what-i-do h2 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #aaccff;
+}
+
+.about-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.about-list li::before {
+  content: "• ";
+  color: #646cff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.about-what-i-do p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.projects-section {
+  padding: 60px 20px;
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+.projects-content {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.project-card {
+  background-color: #1f1f1f;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+.contact-intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
+}
+
+.contact-form button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #535bf2;
+}
+
+.contact-links {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.contact-links a {
+  color: #64b5f6;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-top: 1rem;
+  animation: fadeUp 1.5s ease-out;
+}
+
+.cta-button {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background-color: #646cff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #535bf2;
+}
