@@ -17,9 +17,9 @@ function Contact() {
         </form>
 
         <div className="contact-links">
-          <p>Email: <a href="mailto:khushi@example.com">khushi@example.com</a></p>
+          <p>Email: <a href="mailto:khushisoni52487@gmail.com">khushisoni52487@gmail.com</a></p>
           <p>LinkedIn: <a href="https://linkedin.com/in/khushi" target="_blank">linkedin.com/in/khushi</a></p>
-          <p>GitHub: <a href="https://github.com/khushi-dev" target="_blank">github.com/khushi-dev</a></p>
+          <p>GitHub: <a href="https://github.com/11khushisoni/" target="_blank">github.com/khushi Soni</a></p>
         </div>
       </div>
     </section>
